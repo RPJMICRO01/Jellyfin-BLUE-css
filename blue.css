@@ -1,0 +1,81 @@
+/* --- TEMA CYBERNETIC BLUE: ESTILO TERMINAL TÁCTICO --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* 1. TIPOGRAFÍA GLOBAL (Excluyendo iconos y calificaciones) */
+body *:not(i):not(.material-icons):not([class*="icon"]):not(.listItemIcon):not(span[class*="Icon"]):not(.starIcon):not(.rating):not(svg):not(path) {
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+/* 2. FONDO Y CAPAS TRANSPARENTES */
+body, .mainDrawer, .skinHeader-withBackdrop, .backgroundContainer, .viewContainer, .pageContainer {
+    background-color: #07090e !important;
+    color: #c0d8ef !important;
+}
+
+.mainStreams, .rowContainer, .cards, .itemDetailContainer, .homePage {
+    background: transparent !important;
+}
+
+/* 3. FIGURA GEOMÉTRICA FIJA (SIN GIROS) - Hexágono Superior Izquierdo */
+body::before {
+    content: "" !important;
+    position: fixed !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    top: 8% !important;
+    left: 5% !important;
+    width: 180px !important;
+    height: 180px !important;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+    background: linear-gradient(135deg, rgba(14, 116, 144, 0.25), rgba(56, 189, 248, 0.15)) !important;
+    border: 2px solid rgba(56, 189, 248, 0.35) !important;
+}
+
+/* (Se eliminó el triángulo inferior derecho por completo) */
+
+/* Asegurar que el contenido de Jellyfin esté por encima del fondo */
+.viewContainer, .skinHeader, .mainTabActivity {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* 4. TÍTULOS Y ENCABEZADOS (Estilo Orbitron en Celeste) */
+h1, h2, h3, .sectionTitle, .cardText-primary, .itemDetailTitle {
+    font-family: 'Orbitron', monospace !important;
+    color: #38bdf8 !important;
+    letter-spacing: 2px;
+}
+
+/* 5. TARJETAS DE CONTENIDO (Estilo Tarjetas Azules/Celestes) */
+.cardBox {
+    background: rgba(10, 15, 25, 0.85) !important;
+    border: 1px solid #0369a1 !important;
+    border-left: 5px solid #38bdf8 !important;
+    border-radius: 0px !important;
+    transition: all 0.4s ease !important;
+}
+
+.cardBox:hover {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.35) !important;
+    transform: translateY(-6px) !important;
+    border-left-color: #7dd3fc !important;
+}
+
+/* 6. BOTONES DE ACCIÓN */
+.button-submit, .raised, .btnEmby {
+    background: linear-gradient(135deg, #0369a1, #0c4a6e) !important;
+    color: #38bdf8 !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 0px !important;
+    font-family: 'Orbitron', monospace !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+.button-submit:hover, .raised:hover {
+    background: #38bdf8 !important;
+    color: #07090e !important;
+    box-shadow: 0 0 20px #38bdf8 !important;
+}
