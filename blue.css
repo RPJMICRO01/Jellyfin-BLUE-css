@@ -1,14 +1,22 @@
-/* --- TEMA CYBERNETIC BLUE: ESTILO TERMINAL TÁCTICO --- */
+/* --- TEMA CYBERNETIC BLUE: ESTILO TERMINAL TÁCTICO (VERSION OPTIMIZADA) --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap');
 
-/* 1. TIPOGRAFÍA GLOBAL (Excluyendo iconos y calificaciones) */
+/* 1. TIPOGRAFÍA GLOBAL (Excluyendo iconos y elementos gráficos) */
 body *:not(i):not(.material-icons):not([class*="icon"]):not(.listItemIcon):not(span[class*="Icon"]):not(.starIcon):not(.rating):not(svg):not(path) {
     font-family: 'Roboto Mono', monospace !important;
 }
 
-/* 2. FONDO Y CAPAS TRANSPARENTES */
-body, .mainDrawer, .skinHeader-withBackdrop, .backgroundContainer, .viewContainer, .pageContainer {
+/* 2. FONDO GLOBAL Y CAPAS TRANSPARENTES */
+body, 
+.skinHeader-withBackdrop, 
+.backgroundContainer, 
+.viewContainer, 
+.pageContainer,
+.mainDrawer, 
+.sidebarHeader, 
+.navMenuOption, 
+.mainDrawer-scrollContainer {
     background-color: #07090e !important;
     color: #c0d8ef !important;
 }
@@ -17,7 +25,13 @@ body, .mainDrawer, .skinHeader-withBackdrop, .backgroundContainer, .viewContaine
     background: transparent !important;
 }
 
-/* 3. FIGURA GEOMÉTRICA FIJA (SIN GIROS) - Hexágono Superior Izquierdo */
+/* Position z-index para capas */
+.viewContainer, .skinHeader, .mainTabActivity {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* 3. FIGURA GEOMÉTRICA FIJA - Hexágono Superior Izquierdo */
 body::before {
     content: "" !important;
     position: fixed !important;
@@ -32,22 +46,18 @@ body::before {
     border: 2px solid rgba(56, 189, 248, 0.35) !important;
 }
 
-/* (Se eliminó el triángulo inferior derecho por completo) */
-
-/* Asegurar que el contenido de Jellyfin esté por encima del fondo */
-.viewContainer, .skinHeader, .mainTabActivity {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* 4. TÍTULOS Y ENCABEZADOS (Estilo Orbitron en Celeste) */
-h1, h2, h3, .sectionTitle, .cardText-primary, .itemDetailTitle {
+/* 4. TÍTULOS Y ENCABEZADOS (Orbitron en Celeste) */
+h1, h2, h3, 
+.sectionTitle, 
+.cardText-primary, 
+.itemDetailTitle, 
+.sidebarHeader-title {
     font-family: 'Orbitron', monospace !important;
     color: #38bdf8 !important;
     letter-spacing: 2px;
 }
 
-/* 5. TARJETAS DE CONTENIDO (Estilo Tarjetas Azules/Celestes) */
+/* 5. TARJETAS DE CONTENIDO */
 .cardBox {
     background: rgba(10, 15, 25, 0.85) !important;
     border: 1px solid #0369a1 !important;
@@ -78,4 +88,45 @@ h1, h2, h3, .sectionTitle, .cardText-primary, .itemDetailTitle {
     background: #38bdf8 !important;
     color: #07090e !important;
     box-shadow: 0 0 20px #38bdf8 !important;
+}
+
+/* 7. MENÚ LATERAL (DRAWER) */
+.navMenuOptionText {
+    font-family: 'Roboto Mono', monospace !important;
+    color: #c0d8ef !important;
+}
+
+.navMenuOption:hover, .navMenuOption-selected {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent) !important;
+    border-left: 3px solid #38bdf8 !important;
+    color: #38bdf8 !important;
+}
+
+.navMenuOptionIcon {
+    color: #38bdf8 !important;
+}
+
+/* 8. REPRODUCTOR INFERIOR (MINI PLAYER) */
+.nowPlayingBar, .nowPlayingBar-background, .nowPlayingBarTop {
+    background-color: #0a0f19 !important;
+    border-top: 1px solid #0369a1 !important;
+}
+
+.nowPlayingBarInfoContainer .nowPlayingBarText,
+.nowPlayingBarInfoContainer .nowPlayingBarSecondaryText {
+    font-family: 'Roboto Mono', monospace !important;
+    color: #c0d8ef !important;
+}
+
+.nowPlayingBar .paper-icon-button-light {
+    color: #38bdf8 !important;
+}
+
+.sliderBubble, .innerCardFooterSlider, .nowPlayingBar .sliderMarker {
+    background-color: #38bdf8 !important;
+}
+
+.mdl-slider::-webkit-slider-thumb {
+    background: #38bdf8 !important;
+    box-shadow: 0 0 10px #38bdf8 !important;
 }
